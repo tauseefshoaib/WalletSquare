@@ -49,7 +49,7 @@ const BottomStack = () => {
         tabBarStyle: {
           backgroundColor: 'white',
           borderRadius: 30,
-          maxHeight: 70,
+          minHeight: 80,
           flexDirection: 'row',
           justifyContent: 'center',
           alignItems: 'center',
