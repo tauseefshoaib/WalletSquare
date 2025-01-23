@@ -47,14 +47,10 @@ const BottomStack = () => {
         tabBarInactiveTintColor: 'grey',
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
-          backgroundColor: 'white',
-          borderRadius: 30,
-          minHeight: 80,
           flexDirection: 'row',
           justifyContent: 'center',
           alignItems: 'center',
-          marginBottom: 25,
-          marginHorizontal: 20,
+          paddingBottom: '10%',
         },
       }}>
       <Tab.Screen
