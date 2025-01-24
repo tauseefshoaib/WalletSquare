@@ -19,7 +19,6 @@ type IconProps = {
 
 const tabScreenOptions = {
   tabBarShowLabel: false,
-  headerShown: false,
 };
 
 const Tab = createBottomTabNavigator();

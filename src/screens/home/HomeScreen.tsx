@@ -1,5 +1,5 @@
-import {View, Text, SafeAreaView} from 'react-native';
-import React, {useEffect} from 'react';
+import {Text} from 'react-native';
+import React, {useLayoutEffect} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import CustomHeader from '../../navigation/CustomHeader';
 import ScreenWrapper from '../../components/ScreenWrapper';
@@ -7,8 +7,8 @@ import ScreenWrapper from '../../components/ScreenWrapper';
 const HomeScreen = () => {
   const navigation = useNavigation();
 
-  useEffect(() => {
-    const state = navigation.getState();
+  useLayoutEffect(() => {
+    const state = navigation?.getState();
 
     const screenName = state?.routes?.[state.index]?.name;
 
