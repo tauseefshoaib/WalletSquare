@@ -1,13 +1,12 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-//screens
+// Screens
 import HomeScreen from '../screens/home/HomeScreen';
 import AddScreen from '../screens/add/AddScreen';
-import EditScreen from '../screens/edit/EditScreen';
 import SettingsScreen from '../screens/settings/SettingsScreen';
 
-//icons
+// Icons
 import HomeIcon from '../assets/svg/HomeIcon';
 import SettingsIcon from '../assets/svg/SettingsIcon';
 import EditIcon from '../assets/svg/EditIcon';
@@ -20,7 +19,7 @@ type IconProps = {
 
 const tabScreenOptions = {
   tabBarShowLabel: false,
-  // headerShown: false,
+  headerShown: false,
 };
 
 const Tab = createBottomTabNavigator();
@@ -67,14 +66,6 @@ const BottomStack = () => {
         options={{
           ...tabScreenOptions,
           tabBarIcon: Add,
-        }}
-      />
-      <Tab.Screen
-        name="Edit"
-        component={EditScreen}
-        options={{
-          ...tabScreenOptions,
-          tabBarIcon: Edit,
         }}
       />
       <Tab.Screen
