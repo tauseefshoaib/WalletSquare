@@ -1,22 +1,24 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {createStaticNavigation} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import BottomStack from './BottomStack';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator({
+  initialRouteName: 'Root',
+  screens: {
+    Root: {
+      screen: BottomStack,
+      options: {
+        headerShown: false,
+      },
+    },
+  },
+});
+
+const StackNavigation = createStaticNavigation(Stack);
 
 const RootNavigation = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Root">
-        <Stack.Screen
-          name="Root"
-          component={BottomStack}
-          options={{headerShown: false}}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+  return <StackNavigation />;
 };
 
 export default RootNavigation;
