@@ -1,12 +1,8 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  SafeAreaView,
-} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {FONT_SIZES} from '../styles/commonStyles';
+import {useThemeColor} from '../hooks/useThemeColor';
+import {Colors} from '../styles/theme';
 
 interface IHeaderProps {
   title?: string;
@@ -15,8 +11,9 @@ interface IHeaderProps {
 }
 
 const CustomHeader = ({title, icon, onIconPress}: IHeaderProps) => {
+  const color: Colors = useThemeColor();
+  const styles = getStyles(color);
   return (
-    // <SafeAreaView style={styles.safeArea}>
     <View style={styles.headerContainer}>
       {title && <Text style={styles.title}>{title}</Text>}
       {icon && (
@@ -25,33 +22,33 @@ const CustomHeader = ({title, icon, onIconPress}: IHeaderProps) => {
         </TouchableOpacity>
       )}
     </View>
-    // </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 0,
-  },
-  headerContainer: {
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-    justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    backgroundColor: '#f8f8f8',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
-    minHeight: '15%',
-  },
-  title: {
-    fontSize: FONT_SIZES.massive,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  iconContainer: {
-    marginLeft: 8,
-  },
-});
+const getStyles = (color: Colors) =>
+  StyleSheet.create({
+    safeArea: {
+      flex: 0,
+    },
+    headerContainer: {
+      flexDirection: 'row',
+      alignItems: 'flex-end',
+      justifyContent: 'space-between',
+      paddingHorizontal: 16,
+      paddingVertical: 12,
+      backgroundColor: color.background,
+      borderBottomWidth: 1,
+      borderBottomColor: '#ddd',
+      minHeight: '15%',
+    },
+    title: {
+      fontSize: FONT_SIZES.massive,
+      fontWeight: 'bold',
+      color: color.text,
+    },
+    iconContainer: {
+      marginLeft: 8,
+    },
+  });
 
 export default CustomHeader;
