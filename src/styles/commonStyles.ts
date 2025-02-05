@@ -1,13 +1,15 @@
-// font sizes
-export const fontSizes = {
-  extraSmall: 8,
-  small: 10,
-  medium: 12,
-  large: 14,
-  extraLarge: 16,
-  xxl: 18,
-  xxxl: 20,
-  giant: 24,
-  huge: 28,
-  massive: 32,
+import {moderateScale} from 'react-native-size-matters';
+
+// Font Sizes
+export const FONT_SIZES = {
+  extraSmall: moderateScale(8),
+  small: moderateScale(10),
+  medium: moderateScale(12),
+  large: moderateScale(14),
+  extraLarge: moderateScale(16),
+  xxl: moderateScale(18),
+  xxxl: moderateScale(22),
+  giant: moderateScale(26),
+  huge: moderateScale(30),
+  massive: moderateScale(34),
 };

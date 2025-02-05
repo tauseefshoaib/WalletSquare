@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   SafeAreaView,
 } from 'react-native';
-import {fontSizes} from '../styles/commonStyles';
+import {FONT_SIZES} from '../styles/commonStyles';
 
 interface IHeaderProps {
   title?: string;
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     minHeight: '15%',
   },
   title: {
-    fontSize: fontSizes.massive,
+    fontSize: FONT_SIZES.massive,
     fontWeight: 'bold',
     color: '#333',
   },
