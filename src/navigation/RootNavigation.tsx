@@ -1,24 +1,18 @@
-import React from 'react';
-import {createStaticNavigation} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import React, {useState} from 'react';
+import {NavigationContainer} from '@react-navigation/native';
 import BottomStack from './BottomStack';
-
-const Stack = createNativeStackNavigator({
-  initialRouteName: 'Root',
-  screens: {
-    Root: {
-      screen: BottomStack,
-      options: {
-        headerShown: false,
-      },
-    },
-  },
-});
-
-const StackNavigation = createStaticNavigation(Stack);
+import SplashScreen from '../components/SplashScreen';
 
 const RootNavigation = () => {
-  return <StackNavigation />;
+  const [isNavigationReady, setIsNavigationReady] = useState(false);
+
+  return !isNavigationReady ? (
+    <SplashScreen onFinish={() => setIsNavigationReady(true)} />
+  ) : (
+    <NavigationContainer onReady={() => setIsNavigationReady(true)}>
+      <BottomStack />
+    </NavigationContainer>
+  );
 };
 
 export default RootNavigation;

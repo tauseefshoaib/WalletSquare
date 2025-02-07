@@ -44,7 +44,7 @@ const BottomTabNavigator = () => {
 
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Catalogue"
       screenOptions={{
         tabBarActiveTintColor: 'brown',
         tabBarInactiveTintColor: 'grey',
