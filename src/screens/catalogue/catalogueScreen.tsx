@@ -7,6 +7,7 @@ import {Colors} from '../../styles/theme';
 import {useThemeColor} from '../../hooks/useThemeColor';
 import useThemeStore from '../../store/themeStore';
 import {THEME} from '../../constants/enums';
+import {FONT_FAMILY} from '../../styles/commonStyles';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -52,5 +53,6 @@ const getStyles = (color: Colors) =>
     },
     text: {
       color: color.text,
+      fontFamily: FONT_FAMILY.poppinsBold,
     },
   });

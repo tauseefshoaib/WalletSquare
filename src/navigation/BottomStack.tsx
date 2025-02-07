@@ -3,7 +3,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 
 // Screens
-import HomeScreen from '../screens/home/HomeScreen';
+import Catalogue from '../screens/catalogue/catalogueScreen';
 import AddScreen from '../screens/add/AddScreen';
 import SettingsScreen from '../screens/settings/SettingsScreen';
 
@@ -68,8 +68,8 @@ const BottomTabNavigator = () => {
         },
       }}>
       <Tab.Screen
-        name="Home"
-        component={HomeScreen}
+        name="Catalogue"
+        component={Catalogue}
         options={{
           ...tabScreenOptions,
           tabBarIcon: Home,

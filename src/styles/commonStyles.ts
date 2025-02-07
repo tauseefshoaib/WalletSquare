@@ -13,3 +13,12 @@ export const FONT_SIZES = {
   huge: moderateScale(30),
   massive: moderateScale(34),
 };
+
+// Font Family
+export const FONT_FAMILY = {
+  poppinsLight: 'Poppins-Light',
+  poppinsRegular: 'Poppins-Regular',
+  poppinsMedium: 'Poppins-Medium',
+  poppinsSemiBold: 'Poppins-SemiBold',
+  poppinsBold: 'Poppins-Bold',
+};
