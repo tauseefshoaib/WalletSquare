@@ -1,9 +1,12 @@
-import {View, Text} from 'react-native';
+import {Text, View} from 'react-native';
 import React from 'react';
-import SplashScreen from '../../components/SplashScreen';
 
 const AddScreen = () => {
-  return <View style={{flex: 1}}></View>;
+  return (
+    <View style={{flex: 1}}>
+      <Text>Add Screen</Text>
+    </View>
+  );
 };
 
 export default AddScreen;
