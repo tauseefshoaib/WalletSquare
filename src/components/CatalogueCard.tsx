@@ -1,7 +1,11 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-const CatalogueCard = ({title}) => {
+interface CatalogueCardProps {
+  title: string;
+}
+
+const CatalogueCard: React.FC<CatalogueCardProps> = ({title}) => {
   return (
     <View style={styles.card}>
       <Text>{title}</Text>

@@ -1,10 +1,10 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {FlashList} from '@shopify/flash-list';
 import {walletData, WalletItemType} from '../constants/walletData';
 import CatalogueCard from './CatalogueCard';
 
-const CatalogueList = () => {
+const CatalogueList: React.FC = () => {
   const renderList = ({item}: {item: WalletItemType}) => {
     return <CatalogueCard title={item.modelName} />;
   };

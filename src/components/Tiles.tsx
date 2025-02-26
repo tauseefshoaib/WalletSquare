@@ -33,7 +33,10 @@ const Tiles = ({
   onSwitchChange,
 }: ScreenProps) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={onPressTile}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={onPressTile}
+      disabled={!onPressTile}>
       <View style={styles.iconTitleContainer}>
         <Ionicons
           name={leftIcon}
