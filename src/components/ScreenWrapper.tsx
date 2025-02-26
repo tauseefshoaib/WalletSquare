@@ -1,4 +1,4 @@
-import {StyleSheet, SafeAreaView, ViewStyle} from 'react-native';
+import {StyleSheet, View, ViewStyle} from 'react-native';
 import React from 'react';
 import {useThemeColor} from '../hooks/useThemeColor';
 import {Colors} from '../styles/theme';
@@ -12,9 +12,7 @@ const ScreenWrapper = ({children, style}: IScreenWrapperProps) => {
   const color: Colors = useThemeColor();
   const styles = getStyles(color);
 
-  return (
-    <SafeAreaView style={[styles.container, style]}>{children}</SafeAreaView>
-  );
+  return <View style={[styles.container, style]}>{children}</View>;
 };
 
 export default ScreenWrapper;

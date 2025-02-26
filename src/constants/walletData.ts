@@ -1,4 +1,11 @@
-export const walletData = [
+export type WalletItemType = {
+  id: number;
+  image: string;
+  modelName: string;
+  price: number;
+};
+
+export const walletData: WalletItemType[] = [
   {
     id: 1,
     image: 'https://www.istockphoto.com/photos/leather-wallet',
@@ -234,3 +241,5 @@ export const walletData = [
     price: 67.54,
   },
 ];
+
+export type WalletDataType = WalletItemType[];

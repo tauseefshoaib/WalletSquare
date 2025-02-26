@@ -5,12 +5,15 @@ export type ThemeType = THEME.LIGHT | THEME.DARK;
 
 interface ThemeStore {
   theme: ThemeType | null;
-  toggleTheme: (theme: ThemeType) => void;
+  toggleTheme: () => void;
 }
 
 const useThemeStore = create<ThemeStore>(set => ({
   theme: null, // Default Theme
-  toggleTheme: theme => set({theme}),
+  toggleTheme: () =>
+    set(state => ({
+      theme: state.theme === THEME.DARK ? THEME.LIGHT : THEME.DARK,
+    })),
 }));
 
 export default useThemeStore;

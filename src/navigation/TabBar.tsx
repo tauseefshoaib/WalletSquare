@@ -40,7 +40,7 @@ const CustomTabBar: React.FC<BottomTabBarProps> = ({state, navigation}) => {
             style={styles.tabButton}>
             <Ionicons
               name={icon}
-              color={isFocused ? 'black' : 'grey'}
+              color={isFocused ? color.focusedIcon : color.icon}
               size={36}
             />
           </TouchableOpacity>
@@ -55,7 +55,7 @@ export default CustomTabBar;
 const getStyles = (color: Colors) =>
   StyleSheet.create({
     tabBarContainer: {
-      backgroundColor: color.background,
+      backgroundColor: color.accentColor,
       flexDirection: 'row',
       justifyContent: 'space-around',
       position: 'absolute',

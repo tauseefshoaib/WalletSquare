@@ -6,7 +6,7 @@ import SplashScreen from '../components/SplashScreen';
 const RootNavigation = () => {
   const [isNavigationReady, setIsNavigationReady] = useState(false);
 
-  return !isNavigationReady ? (
+  return !isNavigationReady && !__DEV__ ? (
     <SplashScreen onFinish={() => setIsNavigationReady(true)} />
   ) : (
     <NavigationContainer onReady={() => setIsNavigationReady(true)}>

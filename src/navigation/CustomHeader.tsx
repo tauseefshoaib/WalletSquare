@@ -40,7 +40,7 @@ const getStyles = (color: Colors) =>
       alignItems: 'flex-end',
       justifyContent: 'space-between',
 
-      backgroundColor: color.background,
+      backgroundColor: color.accentColor,
       borderBottomWidth: 1,
       borderBottomColor: '#ddd',
       minHeight: '15%',

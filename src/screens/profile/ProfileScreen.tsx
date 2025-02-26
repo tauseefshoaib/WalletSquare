@@ -1,10 +1,16 @@
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, Button} from 'react-native';
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 
 const ProfileScreen = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <Text>{'Profile'}</Text>
+      <Button
+        title={'Close'}
+        color={'red'}
+        onPress={() => navigation.goBack()}
+      />
     </View>
   );
 };
