@@ -21,7 +21,7 @@ const CustomHeader = ({title, icon, onIconPress}: IHeaderProps) => {
   const styles = getStyles(color);
   return (
     <SafeAreaView style={styles.headerContainer}>
-      <View style={{paddingHorizontal: 16, paddingVertical: 12}}>
+      <View style={styles.header}>
         {title && <Text style={styles.title}>{title}</Text>}
         {icon && (
           <TouchableOpacity onPress={onIconPress} style={styles.iconContainer}>
@@ -36,14 +36,19 @@ const CustomHeader = ({title, icon, onIconPress}: IHeaderProps) => {
 const getStyles = (color: Colors) =>
   StyleSheet.create({
     headerContainer: {
+      backgroundColor: color.accentColor,
+      borderBottomWidth: 0.3,
+      borderBottomColor: '#ddd',
+      minHeight: '15%',
+      flexDirection: 'column',
+      justifyContent: 'flex-end',
+    },
+    header: {
       flexDirection: 'row',
       alignItems: 'flex-end',
       justifyContent: 'space-between',
-
-      backgroundColor: color.accentColor,
-      borderBottomWidth: 1,
-      borderBottomColor: '#ddd',
-      minHeight: '15%',
+      paddingHorizontal: 16,
+      paddingVertical: 12,
     },
     title: {
       fontSize: FONT_SIZES.giant,
