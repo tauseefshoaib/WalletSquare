@@ -3,38 +3,41 @@ import React from 'react';
 import ColorDots from './ColorDots';
 import Text from './Text';
 import Icon from './Icon';
+import {WalletItemType} from '../constants/walletData';
+import useCartStore from '../store/cartStore';
 
 interface CatalogueCardProps {
-  name: string;
-  image: string;
-  price: number;
+  walletData: WalletItemType;
   colors?: string[];
-  onAddToBilling?: () => void;
+  onPressAddToCart: () => void;
 }
 
 const CatalogueCard: React.FC<CatalogueCardProps> = ({
-  name,
-  price,
-  image,
+  walletData,
+  onPressAddToCart,
   colors = ['black', 'brown', 'antique'],
-  onAddToBilling,
 }) => {
+  const {image, modelName: name, price} = walletData;
+
   return (
     <View style={styles.card}>
-      {/* Add to Cart Icon */}
-      <TouchableOpacity style={styles.addToCart} onPress={onAddToBilling}>
-        <Icon name="add-circle" size={22} color="white" />
-      </TouchableOpacity>
-
       <Image source={{uri: image}} style={styles.img} />
 
       <View style={styles.details}>
-        <Text style={styles.name} numberOfLines={1} ellipsizeMode="clip">
-          {name}
-        </Text>
-        <View style={styles.bottomRow}>
+        {/* First row: Price (left) & Name (right) */}
+        <View style={styles.topRow}>
+          <Text style={styles.name} numberOfLines={1} ellipsizeMode="clip">
+            {name}
+          </Text>
           <Text style={styles.price}>₹{price}</Text>
+        </View>
+
+        {/* Second row: Color dots (left) & Add to Cart (right) */}
+        <View style={styles.bottomRow}>
           <ColorDots colors={colors} />
+          <TouchableOpacity style={styles.addToCart} onPress={onPressAddToCart}>
+            <Icon name="add-circle" size={20} color="white" />
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -60,15 +63,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 5,
   },
-  addToCart: {
-    position: 'absolute',
-    top: 5,
-    right: 5,
-    backgroundColor: 'green',
-    borderRadius: 15,
-    padding: 5,
-    zIndex: 10,
-  },
   img: {
     height: '70%',
     width: '100%',
@@ -77,9 +71,13 @@ const styles = StyleSheet.create({
   },
   details: {
     height: '30%',
-    width: '95%',
-    flexDirection: 'column',
+    width: '100%',
     justifyContent: 'flex-end',
+  },
+  topRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   bottomRow: {
     flexDirection: 'row',
@@ -88,15 +86,18 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   name: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: 'bold',
     flexShrink: 1,
-    alignSelf: 'flex-start',
   },
   price: {
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: '600',
     color: 'green',
-    flexShrink: 1,
+  },
+  addToCart: {
+    backgroundColor: 'green',
+    borderRadius: 20,
+    padding: 5,
   },
 });

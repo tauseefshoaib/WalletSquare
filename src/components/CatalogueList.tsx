@@ -1,19 +1,26 @@
 import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {FlashList} from '@shopify/flash-list';
-import {WalletItemType} from '../constants/walletData';
+import {WalletDataType, WalletItemType} from '../constants/walletData';
 import CatalogueCard from './CatalogueCard';
 import Text from './Text';
 
 type ScreenProps = {
-  catalogueList: WalletItemType[];
+  catalogueList: WalletDataType;
+  onAddWalletToCart: (item: WalletItemType) => void;
 };
 
-const CatalogueList: React.FC<ScreenProps> = ({catalogueList}) => {
+const CatalogueList: React.FC<ScreenProps> = ({
+  catalogueList,
+  onAddWalletToCart,
+}) => {
   const renderList = ({item}: {item: WalletItemType}) => {
-    const {id, modelName, price, image} = item;
     return (
-      <CatalogueCard key={id} name={modelName} image={image} price={price} />
+      <CatalogueCard
+        key={item?.id}
+        walletData={item}
+        onPressAddToCart={() => onAddWalletToCart(item)}
+      />
     );
   };
 

@@ -15,6 +15,7 @@ const BadgeIcon: React.FC<BadgeIconProps> = ({
   color = 'black',
   count = 0,
 }) => {
+  console.log('count==>', count);
   return (
     <View style={styles.iconContainer}>
       <Icon name={name} size={size} color={color} />

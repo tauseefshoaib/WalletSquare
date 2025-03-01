@@ -7,13 +7,18 @@ import {useThemeColor} from '../../hooks/useThemeColor';
 import CatalogueList from '../../components/CatalogueList';
 import SearchBox from '../../components/SearchBox';
 import Icon from '../../components/Icon';
-import {walletData} from '../../constants/walletData';
+import {walletData, WalletItemType} from '../../constants/walletData';
 import BadgeIcon from '../../components/BadgeIcon';
+import useCartStore from '../../store/cartStore';
 
 const CatalogueScreen = () => {
   const navigation = useNavigation();
   const color: Colors = useThemeColor();
   const styles = getStyles(color);
+
+  const {cart, addWalletToCart} = useCartStore();
+
+  console.log('cart===>', cart);
 
   const [searchText, setSearchText] = useState('');
   const [filteredData, setFilteredData] = useState(walletData);
@@ -33,14 +38,14 @@ const CatalogueScreen = () => {
                 name={'wallet-outline'}
                 size={28}
                 color={'black'}
-                count={2}
+                count={cart?.length}
               />
             }
           />
         );
       },
     });
-  }, []);
+  }, [cart]);
 
   const onClearFilter = useCallback(() => {
     setSearchText('');
@@ -63,6 +68,9 @@ const CatalogueScreen = () => {
   );
 
   const handleFilterPress = () => {};
+  const handleAddWalletToCart = (item: WalletItemType) => {
+    addWalletToCart(item);
+  };
 
   return (
     <View style={styles.container}>
@@ -81,7 +89,10 @@ const CatalogueScreen = () => {
         />
       </View>
 
-      <CatalogueList catalogueList={filteredData} />
+      <CatalogueList
+        catalogueList={filteredData}
+        onAddWalletToCart={handleAddWalletToCart}
+      />
     </View>
   );
 };
