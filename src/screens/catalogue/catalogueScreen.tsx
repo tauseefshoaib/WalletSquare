@@ -1,5 +1,5 @@
 import {StyleSheet, View} from 'react-native';
-import React, {useCallback, useLayoutEffect, useState} from 'react';
+import React, {useCallback, useLayoutEffect, useMemo, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import CustomHeader from '../../navigation/CustomHeader';
 import {Colors} from '../../styles/theme';
@@ -69,7 +69,11 @@ const CatalogueScreen = () => {
 
   const handleFilterPress = () => {};
   const handleAddWalletToCart = (item: WalletItemType) => {
-    addWalletToCart(item);
+    const updatedItem = {...item, isAddedInCart: true};
+    addWalletToCart(updatedItem);
+    setFilteredData(prevData =>
+      prevData.map(wallet => (wallet.id === item.id ? updatedItem : wallet)),
+    );
   };
 
   return (

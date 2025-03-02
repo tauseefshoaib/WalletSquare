@@ -1,5 +1,5 @@
 import {StyleSheet, View} from 'react-native';
-import React from 'react';
+import React, {useMemo} from 'react';
 import {FlashList} from '@shopify/flash-list';
 import {WalletDataType, WalletItemType} from '../constants/walletData';
 import CatalogueCard from './CatalogueCard';
@@ -11,13 +11,12 @@ type ScreenProps = {
 };
 
 const CatalogueList: React.FC<ScreenProps> = ({
-  catalogueList,
+  catalogueList = [],
   onAddWalletToCart,
 }) => {
   const renderList = ({item}: {item: WalletItemType}) => {
     return (
       <CatalogueCard
-        key={item?.id}
         walletData={item}
         onPressAddToCart={() => onAddWalletToCart(item)}
       />
@@ -37,7 +36,7 @@ const CatalogueList: React.FC<ScreenProps> = ({
         />
       ) : (
         <View style={styles.noDataFoundContainer}>
-          <Text style={styles.noDataFoundText}>{'No Wallet Found!'}</Text>
+          <Text style={styles.noDataFoundText}>No Wallet Found!</Text>
         </View>
       )}
     </View>

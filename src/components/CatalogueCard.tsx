@@ -1,5 +1,5 @@
 import {Image, StyleSheet, View, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, {useMemo} from 'react';
 import ColorDots from './ColorDots';
 import Text from './Text';
 import Icon from './Icon';
@@ -15,9 +15,10 @@ interface CatalogueCardProps {
 const CatalogueCard: React.FC<CatalogueCardProps> = ({
   walletData,
   onPressAddToCart,
+
   colors = ['black', 'brown', 'antique'],
 }) => {
-  const {image, modelName: name, price} = walletData;
+  const {image, modelName: name, price, isAddedInCart} = walletData;
 
   return (
     <View style={styles.card}>
@@ -35,9 +36,13 @@ const CatalogueCard: React.FC<CatalogueCardProps> = ({
         {/* Second row: Color dots (left) & Add to Cart (right) */}
         <View style={styles.bottomRow}>
           <ColorDots colors={colors} />
-          <TouchableOpacity style={styles.addToCart} onPress={onPressAddToCart}>
-            <Icon name="add-circle" size={20} color="white" />
-          </TouchableOpacity>
+          {!isAddedInCart && (
+            <TouchableOpacity
+              style={styles.addToCart}
+              onPress={onPressAddToCart}>
+              <Icon name="add-circle" size={20} color="white" />
+            </TouchableOpacity>
+          )}
         </View>
       </View>
     </View>
@@ -82,8 +87,8 @@ const styles = StyleSheet.create({
   bottomRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
-    marginTop: 10,
+    alignItems: 'flex-end',
+    height: '50%',
   },
   name: {
     fontSize: 15,
@@ -98,6 +103,6 @@ const styles = StyleSheet.create({
   addToCart: {
     backgroundColor: 'green',
     borderRadius: 20,
-    padding: 5,
+    // padding: 5,
   },
 });

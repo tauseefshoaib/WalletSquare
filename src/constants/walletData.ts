@@ -3,6 +3,7 @@ export type WalletItemType = {
   image: string;
   modelName: string;
   price: number;
+  isAddedInCart: boolean;
 };
 
 export const walletData: WalletItemType[] = [
@@ -10,6 +11,7 @@ export const walletData: WalletItemType[] = [
     id: 1,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'KB-100',
     price: 56.6,
   },
@@ -17,6 +19,7 @@ export const walletData: WalletItemType[] = [
     id: 2,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'SB-200',
     price: 87.28,
   },
@@ -24,6 +27,7 @@ export const walletData: WalletItemType[] = [
     id: 3,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'RX-300',
     price: 80.87,
   },
@@ -31,6 +35,7 @@ export const walletData: WalletItemType[] = [
     id: 4,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'ZL-400',
     price: 81.83,
   },
@@ -38,6 +43,7 @@ export const walletData: WalletItemType[] = [
     id: 5,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'GT-500',
     price: 37.8,
   },
@@ -45,6 +51,7 @@ export const walletData: WalletItemType[] = [
     id: 6,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'LX-600',
     price: 70.43,
   },
@@ -52,6 +59,7 @@ export const walletData: WalletItemType[] = [
     id: 7,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'BT-700',
     price: 85.56,
   },
@@ -59,6 +67,7 @@ export const walletData: WalletItemType[] = [
     id: 8,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'FX-800',
     price: 52.96,
   },
@@ -66,6 +75,7 @@ export const walletData: WalletItemType[] = [
     id: 9,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'MX-900',
     price: 67.54,
   },
@@ -73,6 +83,7 @@ export const walletData: WalletItemType[] = [
     id: 10,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'QX-1000',
     price: 30.42,
   },
@@ -80,6 +91,7 @@ export const walletData: WalletItemType[] = [
     id: 11,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'ZT-1100',
     price: 56.6,
   },
@@ -87,6 +99,7 @@ export const walletData: WalletItemType[] = [
     id: 12,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'BN-1200',
     price: 87.28,
   },
@@ -94,6 +107,7 @@ export const walletData: WalletItemType[] = [
     id: 13,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'VP-1300',
     price: 80.87,
   },
@@ -101,6 +115,7 @@ export const walletData: WalletItemType[] = [
     id: 14,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'DF-1400',
     price: 81.83,
   },
@@ -108,6 +123,7 @@ export const walletData: WalletItemType[] = [
     id: 15,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'GH-1500',
     price: 37.8,
   },
@@ -115,6 +131,7 @@ export const walletData: WalletItemType[] = [
     id: 16,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'KT-1600',
     price: 70.43,
   },
@@ -122,6 +139,7 @@ export const walletData: WalletItemType[] = [
     id: 17,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'PL-1700',
     price: 85.56,
   },
@@ -129,6 +147,7 @@ export const walletData: WalletItemType[] = [
     id: 18,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'TX-1800',
     price: 52.96,
   },
@@ -136,6 +155,7 @@ export const walletData: WalletItemType[] = [
     id: 19,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'WB-1900',
     price: 67.54,
   },
@@ -143,6 +163,7 @@ export const walletData: WalletItemType[] = [
     id: 20,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'OX-2000',
     price: 30.42,
   },
@@ -150,6 +171,7 @@ export const walletData: WalletItemType[] = [
     id: 21,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'FV-2100',
     price: 45.12,
   },
@@ -157,6 +179,7 @@ export const walletData: WalletItemType[] = [
     id: 22,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'DX-2200',
     price: 78.95,
   },
@@ -164,6 +187,7 @@ export const walletData: WalletItemType[] = [
     id: 23,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'CL-2300',
     price: 59.99,
   },
@@ -171,6 +195,7 @@ export const walletData: WalletItemType[] = [
     id: 24,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'NL-2400',
     price: 92.34,
   },
@@ -178,6 +203,7 @@ export const walletData: WalletItemType[] = [
     id: 25,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'XR-2500',
     price: 88.76,
   },
@@ -185,6 +211,7 @@ export const walletData: WalletItemType[] = [
     id: 26,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'SK-2600',
     price: 40.78,
   },
@@ -192,6 +219,7 @@ export const walletData: WalletItemType[] = [
     id: 27,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'VG-2700',
     price: 74.99,
   },
@@ -199,6 +227,7 @@ export const walletData: WalletItemType[] = [
     id: 28,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'MN-2800',
     price: 55.44,
   },
@@ -206,6 +235,7 @@ export const walletData: WalletItemType[] = [
     id: 29,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'LP-2900',
     price: 38.67,
   },
@@ -213,6 +243,7 @@ export const walletData: WalletItemType[] = [
     id: 30,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'WT-3000',
     price: 69.88,
   },
@@ -220,6 +251,7 @@ export const walletData: WalletItemType[] = [
     id: 31,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'RN-3100',
     price: 85.12,
   },
@@ -227,6 +259,7 @@ export const walletData: WalletItemType[] = [
     id: 32,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'DL-3200',
     price: 44.33,
   },
@@ -234,6 +267,7 @@ export const walletData: WalletItemType[] = [
     id: 33,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'ZX-3300',
     price: 78.55,
   },
@@ -241,6 +275,7 @@ export const walletData: WalletItemType[] = [
     id: 34,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'QP-3400',
     price: 61.29,
   },
@@ -248,6 +283,7 @@ export const walletData: WalletItemType[] = [
     id: 35,
     image:
       'https://media.istockphoto.com/id/180756294/photo/wallet.jpg?s=1024x1024&w=is&k=20&c=HxbescOER60VAMAoXAldSjPeuoSO5MZfLnPI-ggPnw4=',
+    isAddedInCart: false,
     modelName: 'HF-3500',
     price: 49.99,
   },
